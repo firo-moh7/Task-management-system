@@ -1,73 +1,131 @@
-# React + TypeScript + Vite
+📋 Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Task Management Application built with React + TypeScript, featuring full CRUD functionality, real-time search, dark mode, and persistent local storage.
 
-Currently, two official plugins are available:
+This project is part of my Full-Stack Developer Roadmap (ClientReach Preparation Track).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+✨ Features
+🧩 Core Functionality
+➕ Create new tasks (title, description, status)
+✏️ Edit existing tasks
+❌ Delete tasks instantly
+📊 Task statistics overview
+🔍 Smart Search
+Real-time filtering by task title
+Case-insensitive search
+Instant UI updates
+🌙 UI Experience
+Dark / Light mode toggle
+Smooth UI transitions
+Toast notifications for actions (Add, Edit, Delete)
+💾 Data Persistence
+LocalStorage integration
+Automatic save on every change
+Persistent dark mode preference
+🖼️ Screenshots
 
-## React Compiler
+Add your screenshots in a /screenshots folder and update paths below
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🏠 Main Dashboard
 
-## Expanding the ESLint configuration
+➕ Add Task Form
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🌙 Dark Mode
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🔍 Search Feature
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🛠️ Tech Stack
+⚛️ React (Functional Components)
+🟦 TypeScript
+🎣 React Hooks (useState, useEffect)
+🎨 CSS3 (Custom Styling)
+💾 LocalStorage API
+📁 Project Structure
+src/
+│
+├── components/
+│   ├── SearchBar.tsx
+│   ├── TaskCard.tsx
+│   ├── TaskForm.tsx
+│   ├── TaskStats.tsx
+│
+├── types/
+│   └── Task.ts
+│
+├── App.tsx
+├── App.css
+└── main.tsx
+⚙️ Core Logic Highlights
+🧠 State Management
+tasks → stores all task data
+editingTask → handles edit mode
+searchTerm → controls filtering
+darkMode → UI theme state
+toast → user feedback system
+🔄 CRUD Operations
+➕ Add Task
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Creates a new task with unique ID and adds it to state.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+✏️ Edit Task
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Updates task using immutable map() pattern.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+❌ Delete Task
+
+Removes task using filter() by ID.
+
+🔍 Search System
+
+Dynamic filtering:
+
+Live search updates
+Case-insensitive matching
+Optimized rendering
+💾 Persistence Layer
+Auto-save tasks to LocalStorage
+Load tasks on app startup
+Save UI preferences (dark mode)
+🌙 Theme System
+Toggle dark/light mode
+Persistent UI preference
+Clean CSS class switching
+🎯 What I Learned
+
+This project strengthened my skills in:
+
+React component architecture
+TypeScript in real-world apps
+State & effect management
+UI/UX thinking
+LocalStorage persistence patterns
+Clean frontend architecture
+🚀 Roadmap Context
+
+This project is part of my structured journey toward becoming a Full-Stack Developer aligned with ClientReach requirements:
+
+React + TypeScript Foundation ✔
+Next.js (Upcoming)
+Node.js + Express APIs
+PostgreSQL + Prisma
+TanStack Query
+ShadCN UI
+Full-stack capstone project
+📌 Future Improvements
+ Drag & drop task ordering
+ Backend API integration
+ User authentication
+ Task categories & tags
+ Due dates + reminders
+ Animations (Framer Motion)
+🧑‍💻 Author
+
+Built by an aspiring full-stack developer on a structured roadmap toward ClientReach readiness.
+
+📎 Status
+
+✔ Completed — Phase 1 (React + TypeScript Foundation)
+
+⭐ If you like this project
+
+Feel free to star ⭐ the repo or check out my upcoming projects in this roadmap.
