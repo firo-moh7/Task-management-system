@@ -16,58 +16,28 @@ function TaskStats({ tasks }: TaskStatsProps) {
     (task) => task.status === "completed"
   ).length;
 
-  const stats = [
-    {
-      label: "Total Tasks",
-      value: total,
-      color: "bg-gray-100 text-gray-800",
-    },
-    {
-      label: "Pending",
-      value: pending,
-      color: "bg-yellow-100 text-yellow-800",
-    },
-    {
-      label: "In Progress",
-      value: inProgress,
-      color: "bg-blue-100 text-blue-800",
-    },
-    {
-      label: "Completed",
-      value: completed,
-      color: "bg-green-100 text-green-800",
-    },
-  ];
-
   return (
-    <div className="mb-6">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">
-        📊 Task Statistics
-      </h2>
+    <div className="stats-grid">
+  <div className="stat-card">
+    <h3>Total</h3>
+    <p>{total}</p>
+  </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="bg-white rounded-2xl shadow-md p-5 text-center hover:shadow-xl transition"
-          >
-            <p className="text-sm text-gray-500 mb-2">
-              {stat.label}
-            </p>
+  <div className="stat-card pending-card">
+    <h3>Pending</h3>
+    <p>{pending}</p>
+  </div>
 
-            <p className="text-3xl font-bold">
-              {stat.value}
-            </p>
+  <div className="stat-card progress-card">
+    <h3>In Progress</h3>
+    <p>{inProgress}</p>
+  </div>
 
-            <span
-              className={`inline-block mt-3 px-3 py-1 rounded-full text-sm font-semibold ${stat.color}`}
-            >
-              Status
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
+  <div className="stat-card completed-card">
+    <h3>Completed</h3>
+    <p>{completed}</p>
+  </div>
+</div>
   );
 }
 
